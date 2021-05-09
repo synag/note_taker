@@ -1,4 +1,7 @@
-var fs = require("fs");
+const fs = require("fs");
+var shortid = require('shortid');
+
+
 
 const db = require("../db/db.json");
 
@@ -8,36 +11,23 @@ module.exports = (app) => {
 
   console.log(db);
 
-  app.post("/api/notes", (req, res) => {
-    const obj = req.body;
-     
-    db.push(obj)
 
-    res.json(obj);
+
+  app.post("/api/notes", (req, res) => {
+    // const obj = req.body;
+    const obj = req.body
+    obj.id = shortid.generate()
+    db.push(obj);
+    console.log(db);
+    console.log(shortid.generate());
+
+    res.json(`success`);
+  });
+
+  app.delete("/api/notes", (reg,res)=>{
+
   });
 };
 
-// const getNotes = () =>
-// fetch('/api/notes', {
-//   method: 'GET',
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-// });
 
-// const saveNote = (note) =>
-// fetch('/api/notes', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify(note),
-// });
 
-// const deleteNote = (id) =>
-// fetch(`/api/notes/${id}`, {
-//   method: 'DELETE',
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-// });

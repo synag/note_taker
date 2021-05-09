@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "generate-unique-id": "^2.0.1",
+    "shortid": "^2.2.16",
     "uniqid": "^5.3.0"
   }
 }
