@@ -16,7 +16,7 @@ module.exports = (app) => {
 
     res.json(obj);
   });
-
+  
   app.delete("/api/notes/:id", (req, res) => {
     indexPos = db.indexOf(req.params.id);
     db.splice(indexPos, 1);
