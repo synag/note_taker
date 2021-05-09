@@ -21,12 +21,16 @@ module.exports = (app) => {
     console.log(db);
     console.log(shortid.generate());
 
-    res.json(`success`);
+    res.json(obj);
   });
 
-  app.delete("/api/notes", (reg,res)=>{
-
-  });
+  app.delete('/api/notes/:id', (req,res)=>{
+    console.log("req params", req.params.id)
+     indexPos = db.indexOf(req.params.id)
+     db.splice(indexPos,1)
+      res.send("Deleted")
+    })
+  
 };
 
 
