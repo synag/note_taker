@@ -40,6 +40,7 @@ Minimum instructions
 The sreenshot for the Note Taker is below. 
 
 ![Note Taker](./Develop/public/assets/image/screenshot.png)
+![Note Taker](./Develop/public/assets/image/screenshot2.png)
 
 ## License
 The license used for this project is MIT. Here is the license link https://opensource.org/licenses/MIT
